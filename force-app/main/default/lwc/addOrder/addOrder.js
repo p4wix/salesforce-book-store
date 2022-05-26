@@ -103,10 +103,6 @@ export default class AddOrder extends NavigationMixin(LightningElement) {
 			<h1>Dear ${this.orderRecord.First_Name__c} ${this.orderRecord.Last_Name__c}</h1>
 			<h2>Order ${this.order.data.Name}</h2>
 			<h3>Status: In progress</h3>
-			<p>
-				And after all in your free time it would be good if you gave feedback on the book :D</br>
-				Under this link ${'https://book-shop-developer-edition.fra19.sfdc-urlt2q.force.com/bookstore'}
-			</p>
 		</div></br></br>
 		Best, BookStore
 		`;
