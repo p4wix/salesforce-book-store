@@ -1,0 +1,97 @@
+.add-comment-box {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 18px;
+	width: 57%;
+	padding: 15px;
+	margin: 5px auto 5px 0;
+	border: 1px solid #d9d7d5;
+	box-shadow: 6px 7px 25px -12px rgb(66 68 90);
+	border-radius: 10px;
+}
+
+.add-comment-box .textarea-line {
+	display: flex;
+	flex-direction: column;
+}
+
+.to-right {
+	position: relative;
+}
+
+.button-wrap {
+	margin-top: 1.5rem;
+	position: absolute;
+	bottom: 0;
+}
+
+.stars {
+	display: flex;
+	flex-direction: row;
+	margin-top: 1rem;
+	cursor: pointer;
+}
+
+.numberCircle {
+	width: 37px;
+	line-height: 32px;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 16px;
+	border: 2px solid #0a66c2;
+	margin-left: 3px;
+}
+
+.active {
+	background-color: #0a66c2;
+	color: #fff;
+}
+
+.btn {
+	color: #fff;
+	background-color: #0a66c2;
+	padding: 9px;
+	border-radius: 5px;
+	border: none;
+}
+
+.btn:hover,
+.btn:focus {
+	background-color: #16437e;
+	color: #fff;
+}
+
+.btn:active {
+	background: #09223b;
+	color: rgb(255, 255, 255, 0.7);
+}
+
+.btn:disabled {
+	cursor: not-allowed;
+	background: rgba(0, 0, 0, 0.08);
+	color: rgba(0, 0, 0, 0.3);
+}
+
+textarea:focus {
+	outline-color: #0a66c2;
+}
+
+@media (max-width: 768px) {
+	.add-comment-box {
+		flex-direction: column;
+		display: flex;
+		width: 48%;
+		padding: 15px;
+		margin: 5px 0 5px 0;
+		border: 1px solid #d9d7d5;
+		box-shadow: 6px 7px 25px -12px rgb(66 68 90);
+		border-radius: 10px;
+	}
+
+	.to-right {
+		display: flex;
+		flex-direction: column;
+		height: 20vh;
+	}
+}

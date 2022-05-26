@@ -1,0 +1,49 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<lightning-layout>
+		<lightning-layout-item>
+			<!--<lightning-button
+				class="slds-m-right_small"
+				variant="Neutral"
+				label="Previous"
+				icon-name="utility:chevronleft"
+				onclick={previusHandler}
+				disabled={disablePrevious}
+			></lightning-button>-->
+			<button
+				class="button-18"
+				role="button"
+				onclick={previusHandler}
+				disabled={disablePrevious}
+			>
+				Previous
+			</button>
+		</lightning-layout-item>
+
+		<lightning-layout-item class="center">
+			<div class="center">
+				<b class="slds-text-align_center">{currentPage} of {totalPage}</b>
+			</div>
+		</lightning-layout-item>
+
+		<lightning-layout-item flexibility="center">
+			<!--<lightning-button
+				class="slds-m-left_small"
+				variant="Neutral"
+				label="Next"
+				icon-name="utility:chevronright"
+				icon-position="right"
+				onclick={nextHandler}
+				disabled={disableNext}
+			></lightning-button>-->
+			<button
+				class="button-18"
+				role="button"
+				onclick={nextHandler}
+				disabled={disableNext}
+			>
+				Next
+			</button>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>

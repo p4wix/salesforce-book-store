@@ -1,0 +1,40 @@
+.wrap {
+	width: 60%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.search-bar {
+	width: 100%;
+}
+
+.select {
+	width: 60%;
+}
+
+.slds-form-element {
+	margin-left: 2rem;
+}
+
+.slds-input {
+}
+
+@media (max-width: 768px) {
+	.wrap {
+		width: 80%;
+		/* margin: 0 auto; */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.wrap[c-searchBookComponent_searchBookComponent] {
+		margin: 0;
+	}
+
+	.center[c-bookListComponent_bookListComponent] {
+		font-size: 22px;
+	}
+}

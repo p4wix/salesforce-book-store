@@ -1,0 +1,34 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<div class="cart-row">
+		<div class="cart-item cart-column">
+			<img
+				class="cart-item-image"
+				src={item.Book__r.Image_URL__c}
+				width="100"
+				height="150"
+				alt="obraz"
+			/>
+			<span class="cart-item-title">{item.Book__r.Title__c}</span>
+		</div>
+		<span class="cart-price cart-column">${getItemPrice}</span>
+		<div class="cart-quantity cart-column">
+			<input
+				class="cart-quantity-input"
+				type="number"
+				value={item.Amount_of_book__c}
+				data-id={item.Id}
+				onchange={handleChange}
+				min="1"
+			/>
+			<button
+				class="btn btn-danger"
+				type="button"
+				data-id={item.Id}
+				onclick={handleClick}
+			>
+				REMOVE
+			</button>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,105 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<lightning-card variant="Narrow">
+		<div class="header">
+			<h1>Account Settings</h1>
+		</div>
+		<div class="wrap">
+			<div class="user-info">
+				<div>
+					<img src={USER_IMG} alt="user_img" />
+				</div>
+				<div class="user-details" if:true={getContact}>
+					<template if:true={getContact.FirstName}>
+						<p>First Name: {getContact.FirstName}</p>
+					</template>
+					<template if:false={getContact.FirstName}>
+						<p>First Name: <b>Not Set</b></p>
+					</template>
+					<template if:true={getContact.LastName}>
+						<p>Last Name: {getContact.LastName}</p>
+					</template>
+					<template if:false={getContact.LastName}>
+						<p>Last Name: <b>Not Set</b></p>
+					</template>
+					<template if:true={getContact.Email}>
+						<p>Email: {getContact.Email}</p>
+					</template>
+					<template if:false={getContact.Email}>
+						<p>Email: <b>Not Set</b></p>
+					</template>
+					<template if:true={getContact.MailingCity}>
+						<p>Address: {getContact.MailingCity}</p>
+					</template>
+					<template if:false={getContact.MailingCity}>
+						<p>Address: <b>Not Set</b></p>
+					</template>
+					<template if:true={getContact.Phone}>
+						<p>Phone: {getContact.Phone}</p>
+					</template>
+					<template if:false={getContact.Phone}>
+						<p>Phone: <b>Not Set</b></p>
+					</template>
+				</div>
+			</div>
+			<div class="userEdit-inputs">
+				<lightning-input
+					type="text"
+					placeholder="Type here..."
+					variant="standard"
+					name="FirstName"
+					label="First Name"
+					data-field="FirstName"
+					data-reset="reset"
+				></lightning-input>
+				<lightning-input
+					type="text"
+					placeholder="Type here..."
+					variant="standard"
+					name="LastName"
+					label="Last Name"
+					data-field="LastName"
+					data-reset="reset"
+				></lightning-input>
+				<lightning-input
+					type="email"
+					placeholder="Type here..."
+					variant="standard"
+					name="Email"
+					label="Email"
+					data-field="Email"
+					data-reset="reset"
+				></lightning-input>
+				<lightning-input
+					type="text"
+					placeholder="Type here..."
+					variant="standard"
+					name="MailingCity"
+					label="Mailing City"
+					data-field="MailingCity"
+					data-reset="reset"
+				></lightning-input>
+				<lightning-input
+					type="text"
+					placeholder="Type here..."
+					variant="standard"
+					name="Phone"
+					label="Phone"
+					data-field="Phone"
+					data-reset="reset"
+				></lightning-input>
+			</div>
+		</div>
+		<div class="buttons-wrap">
+			<button class="submitButton button-18" onclick={handleSaveData}>
+				Save Data
+			</button>
+			<button
+				class="slds-m-top_x-small submitButton button-18"
+				onclick={handleChangePassClick}
+			>
+				Change Password
+			</button>
+		</div>
+	</lightning-card>
+</template>

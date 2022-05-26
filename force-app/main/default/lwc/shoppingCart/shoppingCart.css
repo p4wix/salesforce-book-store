@@ -1,0 +1,120 @@
+.content-section {
+	margin: 1em;
+}
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 1.5em;
+}
+
+.section-header {
+	font-family: 'Metal Mania';
+	font-weight: normal;
+	color: #333;
+	text-align: center;
+	font-size: 2.1em;
+	margin-bottom: 1.1em;
+}
+
+.btn {
+	text-align: center;
+	vertical-align: middle;
+	padding: 0.57em 0.57em;
+	cursor: pointer;
+}
+
+.btn-header:hover {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.cart-column {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid black;
+	margin-right: 1.5em;
+	padding-bottom: 10px;
+	margin-top: 10px;
+}
+
+.cart-row {
+	display: flex;
+}
+
+.cart-item {
+	width: 45%;
+}
+
+.cart-price {
+	width: 20%;
+	font-size: 1.2em;
+	color: #333;
+}
+
+.cart-quantity {
+	width: 35%;
+}
+
+.cart-row:last-child {
+	border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+	border: none;
+}
+
+.cart-total {
+	text-align: end;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.cart-total-title {
+	font-weight: bold;
+	font-size: 1.5em;
+	color: black;
+	margin-right: 20px;
+}
+
+.cart-total-price {
+	color: #333;
+	font-size: 1.1em;
+}
+
+.btn-purchase {
+	display: block;
+	margin: 40px auto 80px auto;
+	font-size: 1.35em;
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 0;
+	}
+
+	.section-header {
+		font-size: 1.5em;
+	}
+
+	.cart-row {
+		font-size: 16px;
+	}
+
+	.cart-price {
+		font-size: 16px;
+	}
+
+	.cart-item {
+		font-size: 16px;
+		margin-left: 10px;
+	}
+
+	.cart-total-title {
+		font-size: 16px;
+	}
+
+	.btn-purchase {
+		font-size: 18px;
+		margin: 40px auto;
+	}
+}

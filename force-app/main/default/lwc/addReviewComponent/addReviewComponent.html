@@ -1,0 +1,76 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<div class="add-comment-box">
+		<div class="textarea-line">
+			<label><b>Write Review: </b></label>
+			<textarea
+				data-message="message"
+				name="inputComment"
+				class="inputComment"
+				cols="40"
+				rows="5"
+				value={currentMessage}
+				onchange={handleChange}
+				data-clear="clear"
+			></textarea>
+		</div>
+		<div class="to-right" style="width: 220px">
+			<div class="vote-line">
+				<label for="inputVote">Your Rate:</label>
+				<input type="hidden" name="inputVote" class="inputVote" value="5" />
+				<ul class="stars">
+					<li>
+						<div
+							class="numberCircle active"
+							onclick={handleRateClick}
+							data-circle="ratio"
+						>
+							1
+						</div>
+					</li>
+					<li>
+						<div
+							class="numberCircle"
+							onclick={handleRateClick}
+							data-circle="ratio"
+						>
+							2
+						</div>
+					</li>
+					<li>
+						<div
+							class="numberCircle"
+							onclick={handleRateClick}
+							data-circle="ratio"
+						>
+							3
+						</div>
+					</li>
+					<li>
+						<div
+							class="numberCircle"
+							onclick={handleRateClick}
+							data-circle="ratio"
+						>
+							4
+						</div>
+					</li>
+					<li>
+						<div
+							class="numberCircle"
+							onclick={handleRateClick}
+							data-circle="ratio"
+						>
+							5
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="button-wrap">
+				<button class="btn" type="submit" onclick={handleCreateReview}>
+					Add review
+				</button>
+			</div>
+		</div>
+	</div>
+</template>

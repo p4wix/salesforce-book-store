@@ -1,0 +1,95 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<h1 class="title">Fill in your shipping information</h1>
+	<lightning-card variant="Narrow">
+		<div class="slds-m-around_small wrap">
+			<lightning-input
+				class="slds-p-around_xx-small emailInput"
+				type="email"
+				variant="standard"
+				name="Email__c"
+				label="Email"
+				data-reset="reset"
+				placeholder="type here..."
+				value={orderRecord.Email__c}
+				onchange={handleChange}
+			></lightning-input>
+			<lightning-input
+				class="slds-p-around_xx-small firstNameInput"
+				type="text"
+				variant="standard"
+				name="First_Name__c"
+				label="First Name"
+				data-reset="reset"
+				placeholder="type here..."
+				value={orderRecord.First_Name__c}
+				onchange={handleChange}
+			></lightning-input>
+			<lightning-input
+				class="slds-p-around_xx-small lastNameInput"
+				type="text"
+				variant="standard"
+				name="Last_Name__c"
+				label="Last Name"
+				data-reset="reset"
+				placeholder="type here..."
+				value={orderRecord.Last_Name__c}
+				onchange={handleChange}
+			></lightning-input>
+			<lightning-input
+				class="slds-p-around_xx-small addressInput"
+				type="text"
+				variant="standard"
+				name="Address__c"
+				label="Address"
+				data-reset="reset"
+				placeholder="type here..."
+				value={orderRecord.Address__c}
+				onchange={handleChange}
+			></lightning-input>
+			<lightning-input
+				class="slds-p-around_xx-small postalCodeInput"
+				type="text"
+				variant="standard"
+				name="Postal_Code__c"
+				label="Postal Code"
+				data-reset="reset"
+				placeholder="type here..."
+				value={orderRecord.Postal_Code__c}
+				onchange={handleChange}
+			></lightning-input>
+			<lightning-input
+				class="slds-p-around_xx-small cityInput"
+				type="text"
+				variant="standard"
+				name="City__c"
+				label="City"
+				data-reset="reset"
+				placeholder="type here..."
+				value={orderRecord.City__c}
+				onchange={handleChange}
+			></lightning-input>
+			<lightning-input
+				class="slds-p-around_xx-small phoneInput"
+				type="text"
+				variant="standard"
+				name="Phone__c"
+				label="Phone"
+				data-reset="reset"
+				placeholder="type here..."
+				value={orderRecord.Phone__c}
+				onchange={handleChange}
+			></lightning-input>
+		</div>
+		<div class="wrap-btn">
+			<button
+				title="Primary action"
+				class="slds-m-around_small button-18"
+				onclick={updateOrder}
+				role="button"
+			>
+				Order
+			</button>
+		</div>
+	</lightning-card>
+</template>

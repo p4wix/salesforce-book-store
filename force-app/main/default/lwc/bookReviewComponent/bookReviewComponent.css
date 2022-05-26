@@ -1,0 +1,15 @@
+.single-review-wrap {
+	font-size: 18px;
+	display: inline-block;
+	width: 70%;
+	padding: 15px;
+	margin: 5px auto 5px 0;
+	border: 1px solid #d9d7d5;
+	box-shadow: 6px 7px 25px -12px rgba(66, 68, 90, 1);
+}
+
+@media (max-width: 768px) {
+	.single-review-wrap {
+		width: 48%;
+	}
+}

@@ -1,0 +1,39 @@
+<template>
+	<lightning-card variant="Narrow">
+		<!-- Upcoming books -->
+		<div class="slds-text-heading_large center">All upcoming books</div>
+		<hr />
+		<c-search-book-component
+			onsearch={searchBookHandler}
+			onchoise={optionChoiseHandler}
+		></c-search-book-component>
+		<br />
+		<lightning-layout multiple-rows>
+			<template
+				if:true={visibleBooks}
+				for:each={visibleBooks}
+				for:item="book"
+				for:index="index"
+			>
+				<lightning-layout-item
+					key={book.Id}
+					size="12"
+					small-device-size="10"
+					medium-device-size="5"
+					large-device-size="3"
+				>
+					<c-book-tile
+						book={book}
+						onselect={handleBookClick}
+					></c-book-tile>
+				</lightning-layout-item>
+			</template>
+		</lightning-layout>
+		<div slot="footer" class="slds-m-vertical_medium pagination">
+			<c-pagination
+				records={books}
+				onupdate={updateBookHandler}
+			></c-pagination>
+		</div>
+	</lightning-card>
+</template>

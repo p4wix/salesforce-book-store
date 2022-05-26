@@ -1,0 +1,44 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<lightning-card>
+		<template if:true={data}>
+			<section class="container content-section">
+				<h2 class="section-header">SHOPPING CART</h2>
+				<div class="cart-row">
+					<span class="cart-item cart-header cart-column">ITEM</span>
+					<span class="cart-price cart-header cart-column">PRICE</span>
+					<span class="cart-quantity cart-header cart-column"
+						>QUANTITY</span
+					>
+				</div>
+				<div class="cart-items">
+					<template
+						if:true={data}
+						for:each={getData}
+						for:item="item"
+						for:index="index"
+					>
+						<!-- Item -->
+						<c-shopping-cart-item
+							key={item.Id}
+							item={item}
+							onremove={handleClickRemoveBtn}
+							onchangeinput={handleOnChangeInput}
+						></c-shopping-cart-item>
+					</template>
+				</div>
+				<div class="cart-total">
+					<strong class="cart-total-title">Total Price</strong>
+					<span class="cart-total-price">${getTotalPrice}</span>
+				</div>
+				<button
+					class="btn btn-primary btn-purchase"
+					type="button"
+					onclick={handleClick}
+				>
+					PURCHASE
+				</button>
+			</section>
+		</template>
+	</lightning-card>
+</template>

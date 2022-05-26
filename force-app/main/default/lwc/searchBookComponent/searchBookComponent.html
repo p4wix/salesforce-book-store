@@ -1,0 +1,63 @@
+<!-- sldsValidatorIgnore -->
+
+<template>
+	<div class="wrap">
+		<div class="slds-form-element search-bar">
+			<label class="slds-form-element__label" for="text-input-id-49"
+				>Search Book's</label
+			>
+			<div
+				class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left-right"
+			>
+				<svg
+					class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default"
+					aria-hidden="true"
+				>
+					<use
+						xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"
+					></use>
+				</svg>
+				<input
+					type="search"
+					id="text-input-id-49"
+					placeholder="Placeholder text…"
+					class="slds-input"
+					value={keyWord}
+					onchange={handleKeyChange}
+				/>
+				<button
+					class="slds-button slds-button_icon slds-input__icon slds-input__icon_right"
+					title="Clear"
+					onclick={handleClearInput}
+				>
+					<svg
+						class="slds-button__icon slds-icon-text-light"
+						aria-hidden="true"
+					>
+						<use
+							xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#clear"
+						></use>
+					</svg>
+					<span class="slds-assistive-text">Clear</span>
+				</button>
+			</div>
+		</div>
+		<div class="slds-form-element select">
+			<label class="slds-form-element__label" for="select-01">Sort by</label>
+			<div class="slds-form-element__control">
+				<div class="slds-select_container">
+					<select
+						class="slds-select"
+						id="select-01"
+						onchange={handleSelect}
+					>
+						<option value="default">All Books</option>
+						<option value="most_popular">Most Popular</option>
+						<option value="lower">Lower price</option>
+						<option value="higher">Higher price</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

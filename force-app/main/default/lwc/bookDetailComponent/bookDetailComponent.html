@@ -1,0 +1,90 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<div class="wrap">
+		<template if:true={__bookDetails}>
+			<!-- Book Title -->
+			<div class="bookTitle">
+				<h2>{__bookDetails.Title__c}</h2>
+			</div>
+
+			<div class="bookWrap">
+				<div class="image-wrap">
+					<img
+						class="image"
+						src={__bookDetails.Image_URL__c}
+						alt={__bookDetails.Title__c}
+					/>
+				</div>
+
+				<div class="info slds-var-p-around_large">
+					<h1>{__bookDetails.Author__c}</h1>
+					<p>Price: {__bookDetails.Price__c} $</p>
+					<p>
+						Year of publication: {__bookDetails.Year_of_publication__c}
+					</p>
+					<p>ISBN Code: {__bookDetails.ISBN_Code__c}</p>
+					<p>Amount: {__bookDetails.Amount__c}</p>
+					<div class="row">
+						<p>{getAvgRatio}</p>
+						<img src={STAR} alt="star" class="star-icon" />
+					</div>
+					<p class="desc slds-m-top_medium">
+						{__bookDetails.Description__c}
+					</p>
+
+					<div class="row">
+						<button
+							class="button-28"
+							role="button"
+							onclick={navigateToPDF}
+						>
+							Read a fragment
+						</button>
+
+						<div class="orderSection">
+							<template if:false={guestUser}>
+								<div class="bookWrap">
+									<c-custom-counter
+										onincrement={handleincrement}
+										ondecrement={handledecrement}
+									></c-custom-counter>
+									<p class="slds-p-horizontal_small">{count}</p>
+									<button
+										title="Primary action"
+										class="slds-m-left_x-small button-18"
+										onclick={handleAddToOrder}
+									>
+										Add to Cart
+									</button>
+								</div>
+							</template>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Reviews -->
+			<div class="reviews-title">
+				<h1>What do others think of this book?</h1>
+			</div>
+			<template
+				if:true={reviews}
+				for:each={reviews}
+				for:item="review"
+				for:index="index"
+			>
+				<c-book-review-component
+					key={review.Id}
+					review={review}
+				></c-book-review-component>
+			</template>
+			<template if:false={hasElements}>
+				So far no one has left a review, be the first :D
+			</template>
+			<c-add-review-component
+				book-id={bookId}
+				get-book-review={getBookReviewJS}
+				onupdatereview={updateReviewsHandler}
+			></c-add-review-component>
+		</template>
+	</div>
+</template>

@@ -1,0 +1,87 @@
+body,
+html {
+	font-family: 'Varela Round', sans-serif;
+}
+
+.nav-items {
+	width: 100%;
+	font-size: 24px;
+}
+
+.nav-items .list {
+	display: flex;
+	justify-content: center;
+}
+
+.nav-items .list li {
+	margin-right: 70px;
+}
+
+.nav-items .list li a {
+	font-size: 22px;
+	color: #777;
+	text-decoration: none;
+	transition: all 0.45s;
+}
+
+.nav-items .list li a:hover {
+	color: #000;
+}
+
+.text-items {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.image {
+	height: 34px;
+	width: 66.24px;
+}
+
+.copy-text {
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	.nav-items {
+		width: 100%;
+		font-size: 16px;
+	}
+
+	.nav-items .list {
+		display: flex;
+		justify-content: center;
+	}
+
+	.nav-items .list li {
+		margin-right: 20px;
+	}
+
+	.nav-items .list li a {
+		font-size: 16px;
+		color: #777;
+		text-decoration: none;
+		transition: all 0.45s;
+	}
+
+	.nav-items .list li a:hover {
+		color: #000;
+	}
+
+	.text-items {
+		display: flex;
+		justify-content: center;
+		margin-top: 30px;
+	}
+
+	.image {
+		height: 27.2px;
+		width: 53px;
+	}
+
+	.copy-text {
+		text-align: center;
+		font-size: 11px;
+	}
+}

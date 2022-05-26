@@ -1,0 +1,20 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<lightning-card
+		variant="Narrow"
+		title="Shopping cart"
+		icon-name="standard:orders"
+		class="lightning-card"
+	>
+		<div class="slds-m-around_small">
+			<lightning-datatable
+				key-field="id"
+				data={getResult}
+				show-row-number-column
+				hide-checkbox-column
+				columns={columnsList}
+			>
+			</lightning-datatable>
+		</div>
+	</lightning-card>
+</template>
