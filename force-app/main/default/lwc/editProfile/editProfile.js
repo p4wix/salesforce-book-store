@@ -46,27 +46,77 @@ export default class EditProfile extends NavigationMixin(LightningElement) {
 	//	this.contactToUpdate[name] = value;
 	//}
 
+	checkPhone(phoneNumber) {
+		if (phoneNumber.length === 0) {
+			return true;
+		}
+		let numbers = /^[0-9]+$/;
+		if (phoneNumber.match(numbers) && phoneNumber.length === 9) {
+			return true;
+		}
+		return false;
+	}
+
+	checkFirstName(name) {
+		if (name.length <= 32) {
+			return true;
+		}
+		return false;
+	}
+
+	checkEmail(email) {
+		if (email.length === 0) {
+			return true;
+		}
+		return String(email)
+			.toLowerCase()
+			.match(
+				/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+			);
+	}
+
+	checkForm(data) {
+		let isFirstNameValid = this.checkFirstName(data.FirstName),
+			isLastNameValid = this.checkFirstName(data.LastName),
+			isEmailValid = this.checkEmail(data.Email),
+			isMailingCityValid = this.checkFirstName(data.MailingCity),
+			isPhoneValid = this.checkPhone(data.Phone);
+
+		let isFormValid =
+			isFirstNameValid &&
+			isLastNameValid &&
+			isEmailValid &&
+			isMailingCityValid &&
+			isPhoneValid;
+
+		console.log(
+			isFirstNameValid,
+			isLastNameValid,
+			isEmailValid,
+			isMailingCityValid,
+			isPhoneValid
+		);
+
+		if (isFormValid) {
+			return true;
+		}
+		return false;
+	}
+
 	handleSaveData() {
-		const allValid = [
-			...this.template.querySelectorAll('lightning-input')
-		].reduce((validSoFar, inputFields) => {
-			inputFields.reportValidity();
-			return validSoFar && inputFields.checkValidity();
-		}, true);
+		let data = {
+			FirstName: this.template.querySelector("[data-field='FirstName']")
+				.value,
+			LastName: this.template.querySelector("[data-field='LastName']").value,
+			Email: this.template.querySelector("[data-field='Email']").value,
+			MailingCity: this.template.querySelector("[data-field='MailingCity']")
+				.value,
+			Phone: this.template.querySelector("[data-field='Phone']").value
+		};
+
+		const allValid = this.checkForm(data);
 
 		if (allValid) {
-			let data = {
-				FirstName: this.template.querySelector("[data-field='FirstName']")
-					.value,
-				LastName: this.template.querySelector("[data-field='LastName']")
-					.value,
-				Email: this.template.querySelector("[data-field='Email']").value,
-				MailingCity: this.template.querySelector(
-					"[data-field='MailingCity']"
-				).value,
-				Phone: this.template.querySelector("[data-field='Phone']").value
-			};
-
 			updateContact({ data })
 				.then((result) => {
 					console.log(result);
